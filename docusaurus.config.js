@@ -11,7 +11,7 @@ module.exports = {
   title: 'bibidu blogs',
   tagline: 'blogs of bibidu',
   url: 'https://github.com/bibidu',
-  baseUrl: './',
+  baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'facebookexperimental',
   projectName: 'rome',
