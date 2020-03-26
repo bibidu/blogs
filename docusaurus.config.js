@@ -35,6 +35,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/study/dart/',
+          label: 'Dart',
+          position: 'left',
+        },
+        {
           to: 'docs/others/remark/',
           label: 'Remark',
           position: 'left',
