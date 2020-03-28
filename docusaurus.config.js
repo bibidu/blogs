@@ -25,12 +25,12 @@ module.exports = {
       // },
       links: [
         {
-          to: 'docs/think/widgets/',
-          label: 'Think Widgets',
+          to: 'docs/others/CodeStyle/',
+          label: 'Code Style',
           position: 'left',
         },
         {
-          to: 'docs/react2rn/question/',
+          to: 'docs/react2rn/Question/',
           label: '组件库遗留问题',
           position: 'left',
         },
@@ -40,8 +40,13 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/others/remark/',
-          label: 'Remark',
+          to: 'docs/others/Others/',
+          label: 'Others',
+          position: 'left',
+        },
+        {
+          to: 'docs/others/Todolist/',
+          label: 'TodoList',
           position: 'left',
         },
         {
