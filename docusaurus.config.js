@@ -30,8 +30,8 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/react2rn/Question/',
-          label: '组件库遗留问题',
+          to: 'docs/others/Issues/',
+          label: 'Github Issues',
           position: 'left',
         },
         {
