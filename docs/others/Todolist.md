@@ -1,5 +1,4 @@
-## Todo List
-```md
+```markdown
 # Vapper架构
 # Vapper的CSR SSR切换方式
 # flutter-mp
@@ -12,4 +11,6 @@
 # requestIdleCallback
 # sourcemap实现（参考Rome）
 # 异常监控（参考Sentry）
+# DI依赖注入
+# angularjs
 ```
