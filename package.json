@@ -8,6 +8,7 @@
     "deploy": "docsify serve docs"
   },
   "dependencies": {
+    "docsify": "^4.4.0"
   },
   "browserslist": {
     "production": [
