@@ -6,7 +6,7 @@
 - [添加ng内置模块](#add-ng-module)
 - [监听load事件并执行angularInit](#angular-init)
 
-## FAQ
+## Q&A
 ### 内置服务的注册时机？
 - 声明ng模块并传入configFn（接收$provide进行内置服务注册）
 - 用户modules前添加ng模块

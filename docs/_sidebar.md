@@ -6,3 +6,4 @@
 * [Dart](/dart)
 * [Note](/note)
 * [Angularjs](/angularjs)
+* [HotReload](/hotReload)
