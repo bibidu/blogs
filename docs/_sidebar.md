@@ -7,3 +7,4 @@
 * [Note](/note)
 * [Angularjs](/angularjs)
 * [HotReload](/hotReload)
+* [仓库模板](/repositoryTemplate)
