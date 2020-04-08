@@ -62,3 +62,28 @@ exports.omitWithDefValue = (...args) => {
   return value || []
 }
 ```
+
+### 基于class的方法绑定
+```javascript
+// 基类
+class BaseServer {
+  constructor(server) {
+    this.server = server
+  }
+}
+// 扩展类
+class SockJSServer extends BaseServer {
+  constructor(server) {
+    super(server)
+    this.logger = this.server.logger
+  }
+}
+
+// 测试
+class T {
+  constructor() {
+    this.logger = createLogger()
+    const server = new SockJSServer(this)
+  }
+}
+```
