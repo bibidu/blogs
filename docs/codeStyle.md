@@ -87,3 +87,28 @@ class T {
   }
 }
 ```
+
+### babel async配置
+```javascript
+{
+  test: /\.(js)$/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: [
+        ['@babel/preset-env', {
+          "targets": {
+            "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+          },
+        }],
+      ],
+      plugins: [
+        ["@babel/plugin-transform-runtime"],
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        ['@babel/plugin-proposal-class-properties'],
+      ]
+    }
+  },
+  exclude: /node_modules/
+}
+```
