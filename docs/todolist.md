@@ -10,11 +10,14 @@
 # vue3实现
 # requestIdleCallback
 # sourcemap实现（参考Rome）
-# 异常监控（参考Sentry）
+# 异常监控（参考Sentry/fundebug）
 # DI依赖注入
 # angularjs
 # 魔改vscode
 # webpack graph结构
-# webpack-dev-server中的 @webassemblyjs/ast作用
 # react-hot-loader原理
+# 代码压缩混淆原理
+# babel-polyfill babel-register
+# service-worker
+# csr渐进式接入ssr
 ```
