@@ -8,4 +8,5 @@
 * [Angularjs](/angularjs)
 * [HotReload](/hotReload)
 * [仓库模板](/repositoryTemplate)
+* [webWorker](/webWorker)
 * [其他](/others)

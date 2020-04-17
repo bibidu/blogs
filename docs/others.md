@@ -36,3 +36,35 @@ export default class extends Component {
 想要对 pageA 进行 SSR 渲染必须引入 `pageA`, 但对应的babel配置、路径配置都通过 CSR 代码的webpack中管理。所以原本考虑拆分出一个 渐进式接入 SSR 的 `npm包` 无法实现。
 
 最终方案定为 **在原项目中搭建服务**，弃用依赖中的 `tz_service_cli`。该服务根据路由判断 CSR | SSR 渲染。
+
+
+
+### babel async配置
+- use
+  ```bash
+  npm i babel-loader @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D
+  ```
+
+  ```javascript
+  {
+    test: /\.(js)$/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['@babel/preset-env', {
+            "targets": {
+              "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+            },
+          }],
+        ],
+        plugins: [
+          ["@babel/plugin-transform-runtime"],
+          ["@babel/plugin-proposal-decorators", { "legacy": true }],
+          ['@babel/plugin-proposal-class-properties'],
+        ]
+      }
+    },
+    exclude: /node_modules/
+  }
+  ```
