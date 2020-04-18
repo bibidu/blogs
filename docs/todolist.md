@@ -20,4 +20,7 @@
 # babel-polyfill babel-register
 # service-worker
 # csr渐进式接入ssr
+# zeit构建的SSR、骨架屏
+# dva原理
+# qiankun核心概念原理
 ```
