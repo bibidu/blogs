@@ -29,6 +29,8 @@ watchCollectionAction // 监听一系列行为
 
 runInvokeQueue // 运行调用队列
 
+useCachedOrUpdateOrCreateBundle // 使用缓存bundle或更新bundle或新的bungle
+
 // 变量名结合语境，此处 usingObjectAPI 比 appParamIsObject 更好
 const usingObjectAPI = typeof appNameOrConfig === 'object'
 
