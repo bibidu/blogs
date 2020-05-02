@@ -7,5 +7,5 @@ echo "安装依赖完成"
 
 # 开启服务
 echo "准备开启服务"
-pm2 start index.js --name blogs
+pm2 restart index.js --name blogs
 echo "开启服务完成"
