@@ -9,4 +9,5 @@
 * [HotReload](/hotReload)
 * [仓库模板](/repositoryTemplate)
 * [webWorker](/webWorker)
+* [迁移SSR的问题](/transformSSR)
 * [其他](/others)
