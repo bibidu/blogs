@@ -8,7 +8,6 @@ const {
 
 
 let routes = [] // 项目路由配置
-let searchEngine // 搜索引擎
 
 const baseDir = './docs'
 
@@ -56,6 +55,7 @@ function startServer() {
 }
 
 function getMatchedRoute(url) {
+  if (url === '/') return routes[0]
   for (let i = 0; i < routes.length; i++) {
     const item = routes[i]
     if (item.url === url) {
