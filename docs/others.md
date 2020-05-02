@@ -28,7 +28,7 @@
   }
   ```
 
-### Edge安装Chrome扩展插件
+## Edge安装Chrome扩展插件
 - 找到对应Chrome插件的ID
 
   如ID: `ichgjhjfgnfmnikpoajjoiemklopmhgj`
