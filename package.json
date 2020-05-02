@@ -1,25 +1,26 @@
 {
-  "name": "bibidu",
-  "version": "0.0.0",
-  "private": true,
+  "name": "low-vuetify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "start": "docsify serve ./docs",
-    "build": "docsify serve docs",
-    "deploy": "docsify serve docs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bibidu/low-vuetify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bibidu/low-vuetify/issues"
+  },
+  "homepage": "https://github.com/bibidu/low-vuetify#readme",
   "dependencies": {
-    "docsify": "^4.4.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "marked": "^1.0.0"
   }
 }
