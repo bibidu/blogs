@@ -24,7 +24,11 @@ setup()
 
 function startServer() {
   http.createServer(async (req, res) => {
-    req.url !== '/favicon.ico' && console.log(req.url)
+    console.log(req.url)
+    if (req.url === '/favicon.ico') {
+      res.setHeader("Content-Type", 'image/x-icon')
+      return res.end(fs.readFileSync('./favicon.ico'))
+    }
     const matched = getMatchedRoute(req.url)
     
   
