@@ -10,4 +10,5 @@
 * [仓库模板](/repositoryTemplate)
 * [webWorker](/webWorker)
 * [迁移SSR的问题](/transformSSR)
+* [nginx配置https二级域名](/nginxHttps)
 * [其他](/others)
