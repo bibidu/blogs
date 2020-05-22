@@ -26,6 +26,11 @@ rm -rf node_modules/ && yarn --frozen-lockfile && yarn build && yarn test:covera
 ```
 open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-data-dir=/Users/mr.du/Documents/MyChromeDevUserData
 ```
+## 非安全Edge
+```
+open -n /Applications/Microsoft\ Edge.app/ --args --disable-web-security  --user-data-dir=/Users/mr.du/Documents/MyEdgeDevUserData
+```
+
 ## 配置SSH KEY
 ```bash
 # 检查是否已存在id_rsa id_rsa.pub
