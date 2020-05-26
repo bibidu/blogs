@@ -8,7 +8,7 @@
 ```
 server {
   listen 80;
-  server_name r2rn.yushouxiang.com
+  server_name r2rn.yushouxiang.com;
   location / {
     rewrite ^(.*) https://r2rn.yushouxiang.com$1 permanent;
   }
