@@ -40,7 +40,6 @@ function startServer() {
       const mayExistFilepath = `${baseDir}${url}.md`
       if (await isFile(mayExistFilepath)) {
         const content = await getMdAndResolve(mayExistFilepath)
-        console.log(content)
         return res.end(
           renderHtml({
             title: name,
