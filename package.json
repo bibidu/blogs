@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bibidu/low-vuetify#readme",
   "dependencies": {
+    "@bib1du/markdown2html": "0.0.3",
     "express": "^4.17.1",
     "marked": "^1.0.0"
   }

@@ -23,6 +23,10 @@ exports.getMdAndResolve = async function(mdpath) {
   }
 }
 
+exports.getMd = function(mdpath) {
+  return fs.readFile(mdpath, 'utf8')
+}
+
 exports.extractRoutes = function(content) {
   const routes = []
   content.replace(/<a\s+href="([\/\w]+)">(.+?)<\/a/mg, (_, url, name) => {

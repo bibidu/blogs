@@ -1,9 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+const md2html = require('@bib1du/markdown2html')
 const app = express()
 const {
   getMdAndResolve,
+  getMd,
   extractRoutes,
   isFile,
 } = require('./utils')
@@ -20,7 +22,6 @@ const getSidebar = () => getMdAndResolve(`${baseDir}/_sidebar.md`)
 async function setup() {
   const sidebar = await getSidebar()
   routes = extractRoutes(sidebar)
-
   startServer()
 }
 
@@ -32,26 +33,29 @@ function startServer() {
       res.setHeader("Content-Type", 'image/x-icon')
       return res.end(fs.readFileSync('./favicon.ico'))
     }
-    const hasAuth = req.url.includes('from=5213')
-    console.log(req.url)
-    if (hasAuth) {
-      req.url = req.url.replace(/\?from=5213$/, '')
-    } else {
-      if (req.url === '/') {
-        renderNull(res)
-      }
-    }
+    // const hasAuth = req.url.includes('from=5213')
+    // console.log(req.url)
+    // if (hasAuth) {
+    //   req.url = req.url.replace(/\?from=5213$/, '')
+    // } else {
+    //   if (req.url === '/') {
+    //     renderNull(res)
+    //   }
+    // }
     const matched = getMatchedRoute(req.url)
     if (matched) {
       const { url, name } = matched
       const mayExistFilepath = `${baseDir}${url}.md`
       if (await isFile(mayExistFilepath)) {
-        const content = await getMdAndResolve(mayExistFilepath)
+        const content = await getMd(mayExistFilepath)
+        const { html, css } = md2html.parse(content, { splitStyle: true })
+
         return res.end(
           renderHtml({
-            showSidebar: Boolean(hasAuth),
+            showSidebar: true,
             title: name,
-            content: content + `
+            css,
+            content: html + `
             <script>
               const el = document.querySelector('a[href="${url}"]')
               el.classList.add('checked-item')
@@ -92,10 +96,11 @@ function getMatchedRoute(url) {
 function renderHtml({
   showSidebar = false,
   title,
+  css = '',
   content,
   cssType,
 }) {
-  const css = cssType ? '' : fs.readFileSync('./main.css', 'utf8')
+  const initCSS = cssType ? '' : fs.readFileSync('./main.css', 'utf8')
   const baseHtml = fs.readFileSync('./base.html', 'utf8')
   const sidebarHtml = routes.reduce(
     (p, {name, url}) => `${p}<a href="${url}" class="sidebar-item">${name}</a>`,
@@ -103,7 +108,7 @@ function renderHtml({
   )
   return baseHtml
     .replace(/\{title}/g, title)
-    .replace(/\{style}/g, css)
+    .replace(/\{style}/g, initCSS + '\n' + css)
     .replace(/\{content}/g, content)
     .replace(/\{sidebar}/g, showSidebar ? sidebarHtml : `
     <script type="">
