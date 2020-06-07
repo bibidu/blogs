@@ -8,7 +8,4 @@
 - 绘制样式到骨架屏即可
 
 # 预览图
-
-```code
 <video src="/line2skeleton.mp4" autoplay loop controls style="width: 600px;border:1px solid;" />
-```

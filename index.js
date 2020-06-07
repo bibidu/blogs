@@ -107,7 +107,7 @@ function renderHtml({
     ''
   )
   return baseHtml
-    .replace(/\{title}/g, title)
+    .replace(/\{title}/g, '')
     .replace(/\{style}/g, initCSS + '\n' + css)
     .replace(/\{content}/g, content)
     .replace(/\{sidebar}/g, showSidebar ? sidebarHtml : `
