@@ -3,14 +3,28 @@ const marked = require('marked')
 
 exports.getMdAndResolve = async function(mdpath) {
   try {
-    const content = await fs.readFile(mdpath, 'utf8')
+    // 支持标html标签
+    const codes = []
+    const mark = '@@@!!!!!@@@'
+    const content = (await fs.readFile(mdpath, 'utf8'))
+      .replace(/\`\`\`code([\w\W]+)\`\`\`/g, (_, b) => {
+        codes.push(b)
+        return mark + (codes.length - 1)
+      })
     const markedHtml = marked(content)
+      .replace(new RegExp(`${mark}(\\d)`, 'g'), (_, index) => {
+        return codes[index]
+      })
 
     return markedHtml
   } catch (error) {
     console.log(error);
     return ''
   }
+}
+
+exports.getMd = function(mdpath) {
+  return fs.readFile(mdpath, 'utf8')
 }
 
 exports.extractRoutes = function(content) {
