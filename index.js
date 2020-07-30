@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, './static')))
 
 let routes = [] // 项目路由配置
 
-const baseDir = './docs'
+const baseDir = './docs2'
 let startTime = new Date().getTime()
 
 const getSidebar = () => getMdAndResolve(`${baseDir}/_sidebar.md`)
