@@ -69,8 +69,8 @@ function startServer() {
     renderNull(res)
   })
   
-  app.listen(8080, () => {
-    console.log(`start on 8080`);
+  app.listen(4000, () => {
+    console.log(`start on 4000`);
   })
 }
 
